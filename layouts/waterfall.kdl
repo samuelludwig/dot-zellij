@@ -10,20 +10,17 @@ layout {
     }
   }
 
-  tab {
-    pane command="nvim"
-  }
   tab split_direction="vertical" {
     pane {
-      command "clojure" 
-      args "-M:repl/reloaded:dev:xtdb:+default"
+      command "ssh" 
+      args "-t" "waterfall_v2" "cd" "/home/dot/services/s44-waterfall-lead-manager;" "bash" "-l"
     }
 
     pane split_direction="horizontal" {
       pane size="40%"
       pane {
-        command "clojure" 
-        args "-M:poly" 
+        command "ssh" 
+        args "-t" "waterfall_v2" "cd" "/home/dot/services/s44-waterfall-lead-splitter;" "bash" "-l"
         size "60%"
       }
     }
